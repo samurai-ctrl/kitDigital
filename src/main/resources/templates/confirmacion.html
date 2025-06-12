@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación - IKONOX MARKETING DIGITAL</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #FFFFFFFF;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: #1F435B;
+    }
+
+    h2 {
+      color: #E0277B;
+    }
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg px-4">
+
+  <a href="/" class="navbar-brand"><img src="/img/IKONOX-HORIZONTAL-NEGRO-1408122652.png" alt="Ikonox" width="200" height="85" ></a>
+  <div class="collapse navbar-collapse  ">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="/">Información</a></li>
+      <li class="nav-item"><a class="nav-link" href="/registro-clientes">Registro</a></li>
+    </ul>
+  </div>
+  <button style="background-color: #1F435B; color: white;" class="btn ms-2"><a style="text-decoration: none; color: white;" href="https://www.ikonox.com/"target="_blank">Ikonox</a></button>
+</nav>
+<div style="padding-top: 280px; font-size: 24px" class="container justify-content-center">
+<h2><b>¡Solicitud enviada correctamente!</b></h2>
+<p style="padding-top: 15px">Has solicitado el alta en una de las opciones del Kit Digital.</p>
+<p>Nos pondremos en contacto lo más rápido posible.</p>
+<p>📞 Para cualquier duda, escríbenos en<strong>   hola@ikonoxmarketingdigital.es 📞</strong>.</p>
+
+</div>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const kit = urlParams.get('kit');
+  document.getElementById("kitSelected").textContent = kit;
+</script>
+</body>
+</html>
