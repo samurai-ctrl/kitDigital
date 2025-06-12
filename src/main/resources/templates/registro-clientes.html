@@ -24,7 +24,7 @@
 <div style="padding-top: 110px" class="container">
   <div style="padding-top: 160px" class="container py-5 text-center">
     <!-- Se utiliza la siguiente línea de código para reedirigir a la página de editar y nuevo empleado, recogiendo la id del empleado ya creado -->
-    <h1 style="color: #1f435b; padding-bottom: 50px" class="text-center" th:text="${id} != null?'Editar Empleado':'Nuevo Empleado'" }></h1>
+    <h1 style="color: #1f435b; padding-bottom: 50px" class="text-center" th:text="${id} != null?'Editar Empleado':'Alta Kit Digital'" }></h1>
     <form style="width: auto " class="row g-3 needs-validation mx-5" novalidate th:action="@{/guardar}" method="POST" th:object="${cliente}">
       <!-- De modo oculto, tomamos que se envia por el metodo GET -->
       <input type="hidden" name="id" th:field="*{id}" />
@@ -67,7 +67,7 @@
         <div class="invalid-feedback">Indica bien tu fecha</div>
       </div>
       <div class="mb-3 justify-content-end">
-        <label for="validationCustom06" class="form-label"  style="color: #1f435b">Estado</label>
+        <label for="validationCustom06" class="form-label"  style="color: #1f435b">Opciones del Kit</label>
         <select class="form-select" id="validationCustom06" required th:field="*{opcionKit}">
           <!-- Se utiliza un select para indicar el cargo que corresponde a cada empleado, eligiéndolo el mismo-->
           <option selected disabled value="">Indica tu cargo</option>

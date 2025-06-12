@@ -12,6 +12,7 @@ import com.cursoceat.kitdigital.repository.ClienteRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -29,9 +30,15 @@ public class ControladorCliente {
         return "confirmacion";
     }
 
+    @GetMapping ("/listado-clientes")
+    public String listaClientes(Model model) {
+        model.addAttribute("listaClientes",clienteRepository.findAll());
 
+        return "listado-clientes";
+
+    }
     @GetMapping ("/")
-    public String listaEmpleados(Model model) {
+    public String inicio(Model model) {
         model.addAttribute("inicio",clienteRepository.findAll());
 
         return "inicio";
@@ -62,5 +69,19 @@ public class ControladorCliente {
         return "redirect:/confirmacion";
     }
 
-
+    @GetMapping("/editar/{id}")
+    public String editarCliente(@PathVariable int id, Model model) {
+        Cliente cliente = clienteRepository.findById(id).orElse(null);
+        model.addAttribute("cliente", cliente);
+        return "registro-clientes";
+    }
+    /*
+        utilizamos un getmapping para una página externa para eliminar los empleados que se den de baja
+        de la empresa y de sus cargos
+     */
+    @GetMapping("/eliminar/{id}")
+    public String eliminarCliente(@PathVariable int id) {
+        clienteRepository.deleteById(id);
+        return "redirect:/listado-clientes";
+    }
 }
